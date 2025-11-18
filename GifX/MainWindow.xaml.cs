@@ -43,18 +43,6 @@ namespace GifX
             int maxGifHeight = height2 - (int)headBorder.Height;
             VM.GifMaxWidth = maxGifWidth;
             VM.GifMaxHeight = maxGifHeight;
-
-            gifWidth.VerifyFunc = str => int.TryParse(str, out int v)
-                ? v < 300 || v > maxGifWidth
-                    ? OperationResult.Failed("[300, " + maxGifWidth + "]")
-                    : OperationResult.Success()
-                : OperationResult.Failed("Error");
-
-            gifHeight.VerifyFunc = str => int.TryParse(str, out int v)
-                ? v < 300 || v > maxGifHeight
-                    ? OperationResult.Failed("[300, " + maxGifHeight + "]")
-                    : OperationResult.Success()
-                : OperationResult.Failed("Error");
         }
 
         // 拖动窗体

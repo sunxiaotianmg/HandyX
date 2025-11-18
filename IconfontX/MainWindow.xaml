@@ -28,10 +28,6 @@
             <RadioButton x:Name="RaBtn_PathGeometry" Content="PathGeometry" Margin="5" Checked="RadioButton_Checked"/>
             <RadioButton x:Name="RaBtn_CombinedGeometry" Content="CombinedGeometry" Margin="5" Checked="RadioButton_Checked"/>
             <RadioButton x:Name="RaBtn_DrawingImage" Content="DrawingImage" Margin="0,5,30,5" Checked="RadioButton_Checked"/>
-
-            <hc:TextBox x:Name="TB_Name" Text="default" hc:BorderElement.CornerRadius="0" hc:InfoElement.TitlePlacement="Left" hc:InfoElement.Title="资源名称" 
-                        Style="{StaticResource TextBoxExtend}" BorderThickness="0" Foreground="{DynamicResource PrimaryBrush}" Margin="3" FontSize="18" Width="300"
-                        TextChanged="TB_Name_TextChanged"/>
         </StackPanel>
 
         <TabControl Grid.Row="3" Name="MyTabControl">

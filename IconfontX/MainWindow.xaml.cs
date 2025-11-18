@@ -60,7 +60,7 @@ namespace IconfontX
 
                         colors.Add("#" + op + cl);
                     }
-                    Geometry_Text.Text = string.Format("<Geometry o:Freeze=\"True\" x:Key=\"{0}\">{1}</Geometry>", TB_Name.Text, path);
+                    Geometry_Text.Text = string.Format("<Geometry o:Freeze=\"True\" x:Key=\"default\">{0}</Geometry>", path);
 
                     TypeConverter converter = TypeDescriptor.GetConverter(typeof(Geometry));
                     Geometry geometry = (Geometry)converter.ConvertFrom(path);
@@ -81,7 +81,7 @@ namespace IconfontX
                     else
                     {
                         // 处理彩色图像
-                        DrawingImage_Text.Text = string.Format("<DrawingImage o:Freeze=\"True\" x:Key=\"{0}\">\n  <DrawingImage.Drawing>\n    <DrawingGroup>", TB_Name.Text);
+                        DrawingImage_Text.Text = "<DrawingImage o:Freeze=\"True\" x:Key=\"default\">\n  <DrawingImage.Drawing>\n    <DrawingGroup>";
                         // 给每条 Path 设置颜色
                         for (int i = 0; i < colors.Count; i++)
                         {
@@ -143,11 +143,6 @@ namespace IconfontX
                     Thread.Sleep(500);
                 }
             });
-        }
-
-        private void TB_Name_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
-        {
-            SVG_Text_TextChanged(null, null);
         }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
